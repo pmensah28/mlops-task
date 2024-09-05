@@ -19,7 +19,7 @@ def train(df):
 
     return model, X_train, X_test, y_train, y_test
 
-def accurcy(model, X_test, y_test):
+def get_accuracy(model, X_test, y_test):
     predictions = model.predict(X_test)
     accurcy = accuracy_score(y_test, predictions)
 
@@ -29,5 +29,5 @@ if __name__ == "__main__":
     data = load_dataset()
     print(data.head())
     model, X_train, X_test, y_train, y_test = train(data)
-    accurcy = accurcy(model, X_test, y_test)
+    accurcy = get_accuracy(model, X_test, y_test)
     print(f"Accuracy: {accurcy:.2f}")
